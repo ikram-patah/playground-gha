@@ -1,0 +1,30 @@
+name: Create a .txt file
+on: [push]
+jobs:
+  generate-file
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --non-interactive
+
+      - name: Generate file
+        run: yarn generate-file
+      
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.MACHINE_USER_PAT }}
+          title: 'chore(create file): create new text file'
+          commit-message: Create file
+          branch: automations/create-file
+          base: main
+          delete-branch: true
+          body: |
+            This is the body of the PR line 1.
+            This is the body of the PR line 2.
+
+                    
+      

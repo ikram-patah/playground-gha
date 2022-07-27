@@ -1,0 +1,25 @@
+{
+  "name": "playground-gha",
+  "version": "1.0.0",
+  "description": "This is simply a repo for me to expriment with github action",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-file": "node src/generate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikram-patah/playground-gha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikram-patah/playground-gha/issues"
+  },
+  "homepage": "https://github.com/ikram-patah/playground-gha#readme",
+  "dependencies": {
+    "date-fns": "^2.29.1"
+  }
+}
