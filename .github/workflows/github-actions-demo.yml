@@ -2,6 +2,10 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
+
+  # -------------------------------------------
+  # Explore Github Actions
+  # -------------------------------------------
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
@@ -17,13 +21,15 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+  # -------------------------------------------
+  # Checking BATS version
+  # -------------------------------------------
+  check-bats-version: # defines a job name
+    runs-on: ubuntu-latest # configure what OS to use for the runner
+    steps: # group together all the steps that run in the 'check-bats-version' job. Each item is seperate action / shell script.
+      - uses: actions/checkout@v3 # runs action (uses)
+      - uses: actions/setup-node@v3 # runs action (uses)
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: npm install -g bats # runs shell script
+      - run: bats -v # runs shell script
