@@ -12,11 +12,17 @@ jobs:
       - name: Generate file
         run: yarn generate-file
       
+      - name: Print secrets
+        run: echo ${{ secrets }}
+
+      - name: Print secrets
+        run: echo ${{ secrets.MACHINE_USER_PAT }}
+      
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN  }}
           commit-message: Create file
           branch: automations/create-file
           base: main
