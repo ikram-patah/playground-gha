@@ -13,7 +13,7 @@ jobs:
         run: ls -a
 
       - name: Change directory to core
-        run: cd packages/core
+        run: cd packages
 
       - name: print files 2
         run: ls -a
