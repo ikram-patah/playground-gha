@@ -9,20 +9,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: print files 1
+        run: ls -a
+
       - name: Change directory to core
         run: cd packages/core
+
+      - name: print files 2
+        run: ls -a
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
 
       - name: Generate file
         run: yarn generate-file
-      
-      - name: Print secrets
-        run: echo ${{ secrets }}
-
-      - name: Print secrets
-        run: echo ${{ secrets.MACHINE_USER_PAT }}
       
       - name: Create Pull Request
         id: cpr
