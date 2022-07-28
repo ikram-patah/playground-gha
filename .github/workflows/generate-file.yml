@@ -1,4 +1,4 @@
-name: Create a .txt file
+name: Create a .txt file on demand
 on:
   workflow_dispatch:
 
