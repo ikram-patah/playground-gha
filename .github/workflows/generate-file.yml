@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile --non-interactive
-      
       - name: Change directory to core
         run: cd packages/core
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Generate file
         run: yarn generate-file
