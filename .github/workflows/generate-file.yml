@@ -12,11 +12,19 @@ jobs:
       - name: print files 1
         run: ls -a
 
+      - name: print pwd 1
+        run: pwd
+      
+
       - name: Change directory to core
         run: cd packages
 
+
       - name: print files 2
         run: ls -a
+        
+      - name: print pwd 2
+        run: pwd
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
