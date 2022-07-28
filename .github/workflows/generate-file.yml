@@ -6,24 +6,17 @@ on:
 jobs:
   generate-file:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/core
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: print files 1
+      - name: print files
         run: ls -a
 
-      - name: print pwd 1
-        run: pwd
-      
-
-      - name: Change directory to core
-        run: cd packages
-
-
-      - name: print files 2
-        run: ls -a
-        
-      - name: print pwd 2
+      - name: print pwd
         run: pwd
 
       - name: Install dependencies
